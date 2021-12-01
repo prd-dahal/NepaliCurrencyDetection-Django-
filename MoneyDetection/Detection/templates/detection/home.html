@@ -1,0 +1,12 @@
+<h1>Input image</h1>
+<form  enctype="multipart/form-data" action= {% url 'Detection:detectMoney' %} method = "POST">
+
+{% csrf_token %}
+<input type="file" id="img" name="img" accept="image/*">
+<input type="submit">
+<hr>
+{{var}}
+{%if img%}
+    <img src ="data:image/jpeg;base64,{{img}}">
+{%endif%}
+</form>
